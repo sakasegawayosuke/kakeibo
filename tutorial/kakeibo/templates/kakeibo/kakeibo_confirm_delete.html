@@ -1,0 +1,36 @@
+<!-- 削除確認用画面 -->
+
+<!-- Djangoの削除画面用汎用ビュー「DeleteView」を利用すると、
+[モデル名]_confirm_delete.htmlという名前でテンプレートを作成しておくと、削除ボタンを押した時に削除確認画面として自動的に呼び出される！
+つまり、紐付けをする必要はない！！！ -->
+
+{% extends 'kakeibo/base.html' %}
+{% block content %}
+<div class="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{% url 'kakeibo:kakeibo_list' %}">TOP</a>
+        </li>
+        <li class="breadcrumb-item active">家計簿アプリ</li>
+        </ol>
+        <!-- Example DataTables Card-->
+        <div class="card mb-3">
+        <div class="card-header">
+            <h3>データ削除</h3></div>
+        </div>
+        <div class="content-wrapper">
+            <div class="container-fluid">
+            <!-- {{ object }}で表示される名称は、model.pyのKakeiboクラスの__str__メソッド以下で定義したmemoの値です -->
+            <p>{{ object }} のデータを削除していいですか?</p>
+
+            <form method="post">
+                <button class="btn btn-danger">削除する</button>
+                {% csrf_token %}
+            </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
