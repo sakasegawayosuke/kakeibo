@@ -25,7 +25,7 @@ SECRET_KEY = 'r7s4!7)*=vb)*79n!w9rkw8uwfe(%q8=9*w3f)c2!29d05(&39'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
 
 # Application definition
@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'kakeibo', #最後の「,」を忘れずに！
 
     #bootstrap機能用。[django-bootstrap-form]というモジュールをpipコマンドでインストールしておくこと
-    'bootstrapform',
+    # 'bootstrapform',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +124,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+

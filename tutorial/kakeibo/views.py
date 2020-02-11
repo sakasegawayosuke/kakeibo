@@ -76,3 +76,17 @@ class KakeiboDeleteView(DeleteView):
 def delete_done(request):
     #削除処理が正常終了した場合に呼ばれるテンプレートを指定
     return render(request, 'kakeibo/delete_done.html')
+
+
+#----------------------------------------------------------------------------------------------
+#円グラフの定義
+def show_circle_grahp(request):
+
+    #全データを取得
+    kakeibo_data = Kakeibo.objects.all()
+
+    #全ての金額の合計を求める
+    total = 0
+
+    for item in kakeibo_data:
+        total += item.money

@@ -21,6 +21,8 @@ urlpatterns = [
     path('delete/<int:pk>/', views.KakeiboDeleteView.as_view(), name='kakeibo_delete'),     #削除画面用のURLパターンを指定。更新の時と形は同じ
     path('delete_done/', views.delete_done, name='delete_done'),        #削除が正常に終了した時に、reverse_lazyメソッドから呼ばれるURLパターンを指定
 
+    path('circle/', views.show_circle_grahp, name='kakeibo_circle'),    #円グラフのURLパターンを指定
+
 ]
 
 
