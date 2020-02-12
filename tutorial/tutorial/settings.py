@@ -42,7 +42,7 @@ INSTALLED_APPS = [
     'kakeibo', #最後の「,」を忘れずに！
 
     #bootstrap機能用。[django-bootstrap-form]というモジュールをpipコマンドでインストールしておくこと
-    # 'bootstrapform',
+    'bootstrapform',
 ]
 
 MIDDLEWARE = [
